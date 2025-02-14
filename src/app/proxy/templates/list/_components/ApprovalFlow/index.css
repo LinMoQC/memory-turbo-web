@@ -1,0 +1,257 @@
+/* 定义浅色和暗色模式的 CSS 变量 */
+html {
+    --bg-color-light: #ffffff; /* 浅色背景 */
+    --bg-color-dark: #181818;  /* 暗色背景 */
+    /* --text-color-light: #333333; 浅色文本 */
+    --text-color-dark: #ffffff; /* 暗色文本 */
+    --node-bg-light: #f0f0f0; /* 浅色节点背景 */
+    --node-bg-dark: #333333; /* 暗色节点背景 */
+    --node-border-light: #ddd; 
+    --node-border-dark: #555; /* 暗色节点边框 */
+    --node-box-shadow-light: 10px 0 15px rgba(42, 138, 246, 0.3),
+                            -10px 0 15px rgba(233, 42, 103, 0.3);
+    --node-box-shadow-dark: 10px 0 15px rgba(42, 138, 246, 0.5),
+                            -10px 0 15px rgba(233, 42, 103, 0.5);
+    --handle-color-light: #4682B4;
+    --handle-color-dark: #1e90ff; /* 暗黑模式时的节点手柄颜色 */
+}
+
+/* 默认模式（浅色模式） */
+body {
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+}
+
+/* 在 html 或 body 元素上添加 .dark 类时切换到暗黑模式 */
+body.dark {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
+}
+
+.react-flow {
+    --bg-color: var(--bg-color-light); 
+    --text-color: var(--text-color-light);
+    --node-box-shadow: var(--node-box-shadow-light);
+    --handle-color: var(--handle-color-light);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.react-flow__node-turbo {
+    border-radius: 10px;
+    display: flex;
+    height: 70px;
+    min-width: 150px;
+    font-family: 'Fira Mono', Monospace;
+    font-weight: 500;
+    letter-spacing: -0.2px;
+    box-shadow: var(--node-box-shadow);
+    background-color: var(--node-bg-light);
+}
+
+.react-flow__node-turbo .wrapper {
+    overflow: hidden;
+    display: flex;
+    padding: 2px;
+    position: relative;
+    border-radius: 10px;
+    flex-grow: 1;
+}
+
+.gradient:before {
+    content: '';
+    position: absolute;
+    padding-bottom: calc(100% * 1.41421356237);
+    width: calc(100% * 1.41421356237);
+    background: conic-gradient(from -160deg at 50% 50%,
+            #e92a67 0deg,
+            #a853ba 120deg,
+            #2a8af6 240deg,
+            #e92a67 360deg);
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+}
+
+.react-flow__node-turbo:last-of-type .wrapper.gradient:before {
+    content: '';
+    background: conic-gradient(from -160deg at 50% 50%,
+            #e92a67 0deg,
+            #a853ba 120deg,
+            #2a8af6 240deg,
+            rgba(42, 138, 246, 0) 360deg);
+    animation: spinner 4s linear infinite;
+    transform: translate(-50%, -50%) rotate(0deg);
+    z-index: -1;
+}
+
+@keyframes spinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+.react-flow__node-turbo .inner {
+    background: var(--bg-color);
+    padding: 16px 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+}
+
+.react-flow__node-turbo .icon {
+    margin-right: 8px;
+}
+
+.react-flow__node-turbo .body {
+    display: flex;
+}
+
+.react-flow__node-turbo .title {
+    font-size: 16px;
+    margin-bottom: 2px;
+    line-height: 1;
+    color: var(--text-color);
+}
+
+.react-flow__node-turbo .subline {
+    font-size: 12px;
+    color: #777;
+}
+
+.react-flow__node-turbo .cloud {
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    position: absolute;
+    top: 0;
+    transform: translate(50%, -50%);
+    display: flex;
+    transform-origin: center center;
+    padding: 2px;
+    overflow: hidden;
+    box-shadow: var(--node-box-shadow);
+    z-index: 1;
+}
+
+.react-flow__node-turbo .cloud div {
+    background-color: var(--bg-color);
+    flex-grow: 1;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.react-flow__handle.source {
+    right: 1px;
+}
+
+.react-flow__handle.target {
+    left: 1px;
+}
+
+.react-flow__node:focus {
+    outline: none;
+}
+
+.react-flow__edge .react-flow__edge-path {
+    stroke: url(#edge-gradient);
+    stroke-width: 3;
+    stroke-opacity: 0.75;
+    transform: translateX(10px);
+}
+
+.react-flow__controls button {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid #95679e;
+    border-bottom: none;
+}
+
+.react-flow__controls button:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.react-flow__controls button:first-child {
+    border-radius: 5px 5px 0 0;
+}
+
+.react-flow__controls button:last-child {
+    border-bottom: 1px solid #95679e;
+    border-radius: 0 0 5px 5px;
+}
+
+.react-flow__controls button path {
+    fill: var(--text-color);
+}
+
+.react-flow__attribution {
+    background: rgba(200, 200, 200, 0.2);
+}
+
+.react-flow__attribution a {
+    color: #95679e;
+}
+
+.react-flow__handle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
+.react-flow__handle.connectionindicator:hover {
+    pointer-events: all;
+    border-color: var(--xy-theme-edge-hover);
+}
+
+.react-flow__handle.connectionindicator:focus , 
+.react-flow__handle.connectingfrom,
+.react-flow__handle.connectingto {
+    border-color: var(--xy-theme-edge-hover);
+}
+
+/* 昼夜模式的切换：当 body 元素添加 .dark 类时应用 */
+html.dark .react-flow {
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-color-dark);
+    --node-box-shadow: var(--node-box-shadow-dark);
+    --handle-color: var(--handle-color-dark);
+}
+
+html.dark .react-flow__node-turbo {
+    background-color: var(--node-bg-dark);
+    border: 1px solid var(--node-border-dark);
+}
+
+.react-flow__attribution {
+    display: none;
+}
+
+/* 创建流动点效果 */
+@keyframes flowingPoints {
+    0% {
+      stroke-dasharray: 6, 10;  /* 设置小段的大小与间隔 */
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 6, 10;
+      stroke-dashoffset: -40;  /* 平滑的过渡 */
+    }
+    100% {
+      stroke-dasharray: 6, 10;
+      stroke-dashoffset: -80;  /* 平滑的过渡 */
+    }
+  }
+  
+  .flowing-edge {
+    animation: flowingPoints 1s linear infinite;  /* 增加动画时长，避免卡顿 */
+  }
+  

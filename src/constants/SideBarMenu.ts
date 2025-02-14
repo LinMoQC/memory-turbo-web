@@ -1,67 +1,77 @@
-import { LayoutDashboard, Repeat, SquareTerminal, User2 } from "lucide-react";
+import { UserRole } from "@/stores/role-info";
+import { SideBarMenuItem } from "@/types/sidebar";
+import { BellRing, LayoutDashboard, Repeat, SquareTerminal, User2 } from "lucide-react";
 
-const SideBarMenu = [
+export const SideBarMenu: SideBarMenuItem[] = [
     {
         title: "仪表盘",
-        url: "/dashboard",
+        url: "/proxy/dashboard",  
         icon: LayoutDashboard,
         isActive: true,
+        role_id: UserRole.public
     },
     {
-        title: "项目管理",
-        url: "",
+        title: "模版管理",
+        url: "/proxy/templates",  
         icon: SquareTerminal,
+        role_id: UserRole.public,
         items: [
             {
-                title: "我的项目",
-                url: "#",
+                title: "模版列表",
+                url: "/proxy/templates/list",  
             },
             {
-                title: "新建项目",
-                url: "dashboard/editor",
-            },
+                title: "模版审核",
+                url:  "/proxy/templates/review", 
+                role_id: UserRole.admin
+            }
         ],
     },
     {
         title: "工作流管理",
-        url: "#",
+        url: "/proxy/workflows",  
         icon: Repeat,
+        role_id: UserRole.public,
         items: [
             {
                 title: "流程列表",
-                url: "/workflows",
+                url: "/proxy/workflows/list",  
             },
             {
                 title: "创建流程",
-                url: "/workflows/new",
+                url: "/proxy/workflows/create",  
             },
         ],
     },
     {
         title: "用户管理",
-        url: "#",
+        url: "/proxy/users", 
         icon: User2,
+        role_id: UserRole.admin,
         items: [
             {
                 title: "用户列表",
-                url: "/user/list",
+                url: "/proxy/users/list", 
             },
             {
                 title: "角色管理",
-                url: "/user/roles",
+                url: "/proxy/users/roles", 
             },
             {
                 title: "权限配置",
-                url: "/user/permissions",
+                url: "/proxy/users/permissions",  
             },
             {
                 title: "操作日志",
-                url: "/user/logs",
+                url: "/proxy/users/logs", 
             },
         ],
     },
-]
-
-export {
-    SideBarMenu
-}
+    {
+        title: "消息通知",
+        url: "/proxy/notifications",  
+        icon: BellRing,
+        isActive: true,
+        role_id: UserRole.public
+    }
+];
