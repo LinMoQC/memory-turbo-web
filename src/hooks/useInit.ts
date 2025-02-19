@@ -1,4 +1,4 @@
-import { getAllLowCode } from "@/lib/action";
+import { getAllLowCode } from "@/actions/lowcode.action";
 import { useLowCodeTemplateStore } from "@/stores/lowcode-template";
 
 const useInit = () => {

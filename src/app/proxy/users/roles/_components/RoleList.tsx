@@ -34,11 +34,11 @@ import {
     TableRow,
 } from "@/components/ui/table"
 import { useRouter } from "next/navigation"
-import { getRoles } from "@/lib/action"
 import { RolesRender } from "@/constants/user"
 import Loading from "../loading"
 import { Roles } from "@memory/shared";
 import Badge from "@/app/proxy/_components/badge/Badge"
+import { getRoles } from "@/actions/role.action"
 
 export default function RoleList() {
     const [sorting, setSorting] = useState<SortingState>();
@@ -225,7 +225,7 @@ export default function RoleList() {
                     <div className="flex gap-2">
                         <DropdownMenuTrigger asChild>
                             <Button variant="outline" className="ml-auto">
-                                Columns <ChevronDown />
+                                属性 <ChevronDown />
                             </Button>
                         </DropdownMenuTrigger>
                     </div>
@@ -301,14 +301,14 @@ export default function RoleList() {
                         onClick={() => table.previousPage()}
                         disabled={!table.getCanPreviousPage()}
                     >
-                        Prev
+                        上一页
                     </Button>
                     <Button
                         variant="outline"
                         onClick={() => table.nextPage()}
                         disabled={!table.getCanNextPage()}
                     >
-                        Next
+                        下一页
                     </Button>
                 </div>
             </div>

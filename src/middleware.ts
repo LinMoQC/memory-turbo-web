@@ -15,10 +15,10 @@ export async function authMiddleware(request: NextRequest) {
 
   if (isProtectedRoute && !token) {
     const url = new URL('/login', request.url);
-    return NextResponse.redirect(url); 
+    return NextResponse.redirect(url);
   }
 
-  return NextResponse.next(); 
+  return NextResponse.next();
 }
 
 export async function roleMiddleware(request: NextRequest) {
@@ -29,26 +29,14 @@ export async function roleMiddleware(request: NextRequest) {
   const route = Routes.find(item => item.path === pathname);
 
   if (roleCookie && route) {
-    let parsedRole;
-
-    if (roleCookie.startsWith('j:')) {
-      try {
-        const roleJson = roleCookie.slice(2);  
-        parsedRole = JSON.parse(roleJson);  
-      } catch (error) {
-        console.error('Error parsing role:', error);
-        return NextResponse.redirect(new URL('/proxy/dashboard', request.url)); 
-      }
-    }
-
-    const roleId = parsedRole?.role_id;  
+    const roleId = JSON.parse(roleCookie);
 
     if (roleId >= route.role_id) {
-      return NextResponse.next();  
+      return NextResponse.next();
     } else {
       // 权限不足，重定向到 dashboard
       const url = new URL('/proxy/dashboard', request.url);
-      return NextResponse.redirect(url); 
+      return NextResponse.redirect(url);
     }
   }
 

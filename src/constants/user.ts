@@ -1,4 +1,4 @@
-import { Ban, CheckCircle,User, Crown  } from "lucide-react";
+import { Ban, CheckCircle,User, Crown,Ghost  } from "lucide-react";
 import { Roles, UserStatusEnum } from "@memory/shared";
 
 export const RolesRender = {
@@ -14,6 +14,12 @@ export const RolesRender = {
         bgColor: "#BFDBFE",    
         icon: Crown,           
     },
+    [Roles.super]: {
+        label: "超管",
+        textColor: "#B91C1C",  // 你可以自定义颜色
+        bgColor: "#FEE2E2",    // 你可以自定义背景色
+        icon: Ghost, // 假设你使用一个图标，如 ShieldExclamation
+    }
 };
 
 

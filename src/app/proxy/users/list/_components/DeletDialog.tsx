@@ -1,3 +1,4 @@
+import { deletUserByUsename } from "@/actions/user.action";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -6,7 +7,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { deletUserByUsename } from "@/lib/action";
 import { UserInfo } from "@/types/user";
 import React, { useCallback, useTransition } from "react";
 import toast from "react-hot-toast";

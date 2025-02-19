@@ -1,3 +1,4 @@
+import { requestApproval } from "@/actions/lowcode.action";
 import UserSelect from "@/app/proxy/_components/userSelect";
 import { Button } from "@/components/ui/button";
 import {
@@ -8,7 +9,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import useInit from "@/hooks/useInit";
-import { requestApproval } from "@/lib/action";
 import React, { useState, useCallback, useEffect, useActionState, useTransition } from "react";
 
 interface SubmitDialogProps {

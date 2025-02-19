@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
     title: 'Welcome to Memory Flow',
@@ -9,6 +10,10 @@ export default function AuthLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    // 项目没有初始化
+    if(process.env.INITIALIZED === 'false') {
+        return redirect('/initialize')
+    }
     return (
         <div className="grid min-h-svh lg:grid-cols-2">
                     <div className="relative hidden bg-muted lg:block">

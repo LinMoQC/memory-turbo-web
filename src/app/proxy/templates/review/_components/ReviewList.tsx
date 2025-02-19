@@ -1,6 +1,5 @@
 'use client'
 
-import { approveRequest, getAllPendings, rejectRequest } from "@/lib/action"
 import { LowcodeTemplate } from "@/types/template"
 import { Fragment, useEffect, useState } from "react"
 import { Check, Inbox, X } from "lucide-react";
@@ -14,6 +13,7 @@ import { useLoadingStore } from "@/stores/global-loading";
 import ReviewFooter from "./ReviewFooter";
 import Badge from "@/app/proxy/_components/badge/Badge";
 import EmptyState from "@/app/common/Empty";
+import { approveRequest, getAllPendings, rejectRequest } from "@/actions/lowcode.action";
 
 export default function ReviewList() {
     const [templatePendings, setTemplatePendings] = useState<LowcodeTemplate[]>([])

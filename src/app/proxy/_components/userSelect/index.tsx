@@ -1,3 +1,4 @@
+import { getAllAdminUser } from "@/actions/user.action";
 import {
   Select,
   SelectContent,
@@ -5,7 +6,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { getAllAdminUser } from "@/lib/action";
 import { AdminInfo } from "@/types/user";
 import { useEffect, useId, useState } from "react";
 

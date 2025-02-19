@@ -249,7 +249,7 @@ export default function LowCodeTemplateList() {
             <div className="flex items-center justify-between py-4 gap-x-3">
                 <div className="flex gap-2 flex-1">
                     {(!isLoading) ? <Input
-                        placeholder="Filter project by template_name..."
+                        placeholder="按模版名搜索..."
                         value={(table.getColumn("template_name")?.getFilterValue() as string) ?? ""}
                         onChange={(event) =>
                             table.getColumn("template_name")?.setFilterValue(event.target.value)
@@ -258,7 +258,7 @@ export default function LowCodeTemplateList() {
                     /> : <div className="w-full animate-pulse flex flex-col space-y-4">
                         <div className="bg-gray-200 h-6 rounded-md w-full"></div></div>}
                     {(!isLoading) ? <Input
-                        placeholder="Filter project by username..."
+                        placeholder="按用户名搜索..."
                         value={(table.getColumn("username")?.getFilterValue() as string) ?? ""}
                         onChange={(event) =>
                             table.getColumn("username")?.setFilterValue(event.target.value)
@@ -271,12 +271,12 @@ export default function LowCodeTemplateList() {
                     <div className="flex gap-2">
 
                         <Button variant="outline" className="ml-auto" onClick={handleNew}>
-                            <SquarePlus />New
+                            <SquarePlus />新增
                         </Button>
 
                         <DropdownMenuTrigger asChild>
                             <Button variant="outline" className="ml-auto">
-                                Columns <ChevronDown />
+                                属性 <ChevronDown />
                             </Button>
                         </DropdownMenuTrigger>
                     </div>
@@ -372,14 +372,14 @@ export default function LowCodeTemplateList() {
                         onClick={() => table.previousPage()}
                         disabled={!table.getCanPreviousPage()}
                     >
-                        Prev
+                        上一页
                     </Button>
                     <Button
                         variant="outline"
                         onClick={() => table.nextPage()}
                         disabled={!table.getCanNextPage()}
                     >
-                        Next
+                        下一页
                     </Button>
                 </div>
             </div>

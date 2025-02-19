@@ -2,6 +2,7 @@ import axios, { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
 import LocalStorageUtil from './localStorageUtil';
 import toast from 'react-hot-toast';
 import { useLoadingStore } from '@/stores/global-loading';
+import { clearCookies } from '@/actions/auth.action';
 
 class AxiosClient {
     private instance: AxiosInstance;
@@ -62,6 +63,7 @@ class AxiosClient {
                         } catch (refreshError) {
                             console.error('Refresh token failed:', refreshError);
                             LocalStorageUtil.clear()
+                            await clearCookies()
                             window.location.href = '/login';
                         }
                     }

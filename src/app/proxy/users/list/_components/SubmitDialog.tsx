@@ -11,10 +11,10 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Roles, UserStatusEnum } from "@memory/shared";
-import { updateUserByName } from "@/lib/action";
 import { UserInfo } from "@/types/user";
 import React, { useState, useCallback, useEffect, useTransition } from "react";
 import toast from "react-hot-toast";
+import { updateUserByName } from "@/actions/user.action";
 
 interface SubmitDialogProps {
   isOpen: boolean;

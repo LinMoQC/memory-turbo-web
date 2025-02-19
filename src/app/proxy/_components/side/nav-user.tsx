@@ -31,8 +31,7 @@ import { User, useUserStore } from "@/stores/role-info";
 import { AlertDialog, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from "@/components/ui/alert-dialog";
 import { AlertDialogAction, AlertDialogCancel } from "@radix-ui/react-alert-dialog";
 import { useState } from "react";
-import { clearCookies } from "@/lib/action";
-import { Button } from "@/components/ui/button";
+import { clearCookies } from "@/actions/auth.action";
 
 // 定义组件时，使用 props 来接收 user
 export function NavUser({ user }: { user: User }) {

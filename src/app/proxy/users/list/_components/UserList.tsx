@@ -36,7 +36,6 @@ import {
 } from "@/components/ui/table"
 import dayjs from "dayjs"
 import Loading from "../../roles/loading"
-import { getUsers } from "@/lib/action"
 import { UserInfo } from "@/types/user"
 import { RolesRender, UserStatusRender } from "@/constants/user"
 import { Roles, UserStatusEnum } from "@memory/shared";
@@ -44,6 +43,7 @@ import SubmitDialog from "./SubmitDialog"
 import DeletDialog from "./DeletDialog"
 import Badge from "@/app/proxy/_components/badge/Badge"
 import EmptyState from "@/app/common/Empty"
+import { getUsers } from "@/actions/user.action"
 
 export default function UserList() {
     const [sorting, setSorting] = useState<SortingState>([
@@ -214,7 +214,7 @@ export default function UserList() {
             <div className="flex items-center justify-between py-4 gap-x-3">
                 <div className="flex gap-2 flex-1">
                     {(!isLoading) ? <Input
-                        placeholder="Filter project by role..."
+                        placeholder="按角色搜索..."
                         value={(table.getColumn("role_id")?.getFilterValue() as string) ?? ""}
                         onChange={(event) =>
                             table.getColumn("role_id")?.setFilterValue(event.target.value)
@@ -223,7 +223,7 @@ export default function UserList() {
                     /> : <div className="w-full animate-pulse flex flex-col space-y-4">
                         <div className="bg-gray-200 h-6 rounded-md w-full"></div></div>}
                     {(!isLoading) ? <Input
-                        placeholder="Filter project by username..."
+                        placeholder="按用户名搜索..."
                         value={(table.getColumn("username")?.getFilterValue() as string) ?? ""}
                         onChange={(event) =>
                             table.getColumn("username")?.setFilterValue(event.target.value)
@@ -236,7 +236,7 @@ export default function UserList() {
                     <div className="flex gap-2">
                         <DropdownMenuTrigger asChild>
                             <Button variant="outline" className="ml-auto">
-                                Columns <ChevronDown />
+                                属性 <ChevronDown />
                             </Button>
                         </DropdownMenuTrigger>
                     </div>
@@ -321,14 +321,14 @@ export default function UserList() {
                         onClick={() => table.previousPage()}
                         disabled={!table.getCanPreviousPage()}
                     >
-                        Prev
+                        上一页
                     </Button>
                     <Button
                         variant="outline"
                         onClick={() => table.nextPage()}
                         disabled={!table.getCanNextPage()}
                     >
-                        Next
+                        下一页
                     </Button>
                 </div>
             </div>

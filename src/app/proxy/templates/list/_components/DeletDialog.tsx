@@ -1,3 +1,4 @@
+import { deleteLowCodeProjectById } from "@/actions/lowcode.action";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -7,7 +8,6 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import useInit from "@/hooks/useInit";
-import { deleteLowCodeProjectById } from "@/lib/action";
 import React, { useCallback, useTransition } from "react";
 import toast from "react-hot-toast";
 

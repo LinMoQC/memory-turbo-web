@@ -1,0 +1,172 @@
+
+
+> memory-flow-web@0.1.0 build /Users/linmo/Desktop/projects/my/memory-turbo/apps/web
+> next build
+
+   [1m[38;2;173;127;168m▲ Next.js 15.1.4[39m[22m
+   - Environments: .env
+
+ [37m[1m [22m[39m Creating an optimized production build ...
+ [32m[1m✓[22m[39m Compiled successfully
+[?25l [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m..[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m...[39m[2K[1G [37m[1m [22m[39m Linting and checking validity of types  [36m.[39m[2K[1G[?25h[31m
+Failed to compile.[39m
+[?25l [36m.[39m [2K[1G[?25h
+./src/actions/auth.action.ts
+20:44  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+46:44  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+78:44  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/actions/init.action.ts
+21:44  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/actions/lowcode.action.ts
+28:43  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+32:42  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+52:36  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+70:14  Error: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+82:14  Error: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+94:14  Error: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/actions/user.action.ts
+41:14  Error: 'error' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/(auth)/forget/_components/forget-form.tsx
+8:8  Error: 'LocalStorageUtil' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/(auth)/layout.tsx
+20:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/common/ErrorBoundary/ErrorBoundary.tsx
+37:25  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/common/NotFound/index.tsx
+6:17  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/initialize/_components/initialize-form.tsx
+29:13  Error: Expected an assignment or function call and instead saw an expression.  @typescript-eslint/no-unused-expressions
+
+./src/app/page.tsx
+1:8  Error: 'Image' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/proxy/_components/badge/Badge.tsx
+5:9  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/app/proxy/_components/header/index.tsx
+61:8  Warning: React Hook useEffect has missing dependencies: 'initTemplateList', 'router', and 'toast'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/proxy/_components/roleSelect/index.tsx
+22:59  Error: 'value' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/proxy/_components/side/index.tsx
+22:20  Error: Component definition is missing display name  react/display-name
+27:7  Warning: React Hook useEffect has a missing dependency: 'init'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/proxy/_components/userSelect/index.tsx
+47:19  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/app/proxy/_components/userStatusSelect/index.tsx
+9:17  Error: 'useState' is defined but never used.  @typescript-eslint/no-unused-vars
+20:72  Error: 'value' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/proxy/templates/create/page.tsx
+23:26  Error: '_' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+50:8  Warning: React Hook useEffect has a missing dependency: 'init'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+64:8  Warning: React Hook useEffect has a missing dependency: 'initEditor'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/proxy/templates/list/_components/ApprovalFlow/TurboNode.tsx
+14:16  Error: Component definition is missing display name  react/display-name
+
+./src/app/proxy/templates/list/_components/ApprovalFlow/index.tsx
+22:10  Error: 'AnimatePresence' is defined but never used.  @typescript-eslint/no-unused-vars
+22:27  Error: 'motion' is defined but never used.  @typescript-eslint/no-unused-vars
+116:6  Warning: React Hook useEffect has missing dependencies: 'setEdges' and 'setNodes'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+160:1  Warning: Assign arrow function to a variable before exporting as module default  import/no-anonymous-default-export
+160:16  Error: Component definition is missing display name  react/display-name
+
+./src/app/proxy/templates/list/_components/DeletDialog.tsx
+32:6  Warning: React Hook useCallback has missing dependencies: 'initTemplateList' and 'setOpen'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/proxy/templates/list/_components/LowCodeTemplates.tsx
+3:65  Error: 'useTransition' is defined but never used.  @typescript-eslint/no-unused-vars
+202:23  Error: 'project' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+226:8  Warning: React Hook useEffect has a missing dependency: 'initTemplateList'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/proxy/templates/list/_components/SubmitDialog.tsx
+33:6  Warning: React Hook useEffect has a missing dependency: 'initTemplateList'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+46:6  Warning: React Hook useCallback has a missing dependency: 'setOpen'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/proxy/templates/review/_components/ReviewList.tsx
+29:8  Warning: React Hook useEffect has a missing dependency: 'init'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+44:13  Error: Expected an assignment or function call and instead saw an expression.  @typescript-eslint/no-unused-expressions
+
+./src/app/proxy/templates/review/page.tsx
+1:17  Error: 'Fragment' is defined but never used.  @typescript-eslint/no-unused-vars
+1:27  Error: 'Suspense' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/proxy/users/list/_components/DeletDialog.tsx
+32:6  Warning: React Hook useCallback has missing dependencies: 'initUserList' and 'setOpen'. Either include them or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/app/proxy/users/list/_components/UserList.tsx
+3:55  Error: 'useTransition' is defined but never used.  @typescript-eslint/no-unused-vars
+16:23  Error: 'ChevronUp' is defined but never used.  @typescript-eslint/no-unused-vars
+16:56  Error: 'SquarePlus' is defined but never used.  @typescript-eslint/no-unused-vars
+16:75  Error: 'Send' is defined but never used.  @typescript-eslint/no-unused-vars
+16:81  Error: 'User' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/proxy/users/roles/_components/RoleList.tsx
+44:21  Error: 'setSorting' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+51:12  Error: 'submitDialogOpen' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+52:12  Error: 'deleteDialogOpen' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+53:12  Error: 'curTemplateKey' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+56:11  Error: 'handleDelete' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+62:11  Error: 'handleSubmit' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+68:11  Error: 'handleEdit' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+73:11  Error: 'handleNew' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+160:23  Error: 'user' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/app/proxy/workflows/create/page.tsx
+15:19  Error: 'setNodes' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+19:14  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/hooks/use-toast.ts
+21:7  Error: 'actionTypes' is assigned a value but only used as a type.  @typescript-eslint/no-unused-vars
+
+./src/hooks/useRouteLeaveConfirm.tsx
+8:32  Error: 'url' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/lib/http.ts
+89:46  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+93:45  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+97:47  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+112:25  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/lib/localStorageUtil.ts
+7:40  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/lib/websocket.ts
+20:38  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+23:35  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+87:39  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+96:45  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+106:47  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+125:27  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/stores/lowcode-store.ts
+18:82  Error: 'get' is defined but never used.  @typescript-eslint/no-unused-vars
+
+./src/types/auth.ts
+11:12  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/types/editor.ts
+6:20  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+32:13  Error: The `{}` ("empty object") type allows any non-nullish value, including literals like `0` and `""`.
+- If that's what you want, disable this lint rule with an inline comment or configure the 'allowObjectTypes' rule option.
+- If you want a type meaning "any object", you probably want `object` instead.
+- If you want a type meaning "any value", you probably want `unknown` instead.  @typescript-eslint/no-empty-object-type
+35:15  Error: Unexpected any. Specify a different type.  @typescript-eslint/no-explicit-any
+
+./src/types/role.ts
+5:11  Error: 'Role' is defined but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+[?25l [36m.[39m [?25h[41m[30m ELIFECYCLE [39m[49m [31mCommand failed with exit code 1.[39m

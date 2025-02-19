@@ -14,10 +14,11 @@ import {
 import { NavMain } from "./nav-main"
 import { NavUser } from "./nav-user"
 import { SideBarMenu } from "@/constants/sideBarMenu"
-import { UserRole, useUserStore } from "@/stores/role-info"
+import { useUserStore } from "@/stores/role-info"
 import { Fragment, useEffect, useMemo } from "react"
-import { getInfo } from "@/lib/action"
 import LocalStorageUtil from "@/lib/localStorageUtil"
+import { getInfo } from "@/actions/auth.action"
+import { Roles } from "@memory/shared"
 
 const AppSidebar = React.memo(({ ...props }: React.ComponentProps<typeof Sidebar>) => {
     const { user, setUser } = useUserStore();
@@ -35,8 +36,19 @@ const AppSidebar = React.memo(({ ...props }: React.ComponentProps<typeof Sidebar
     }
 
     const sideBarMenuRole = useMemo(() => {
-        return SideBarMenu.filter((item) => (user?.role || UserRole.public) >= item.role_id);
-    }, [user]);
+        return SideBarMenu.filter((item) => {
+          const isMainItemVisible = (user?.role || Roles.public) >= item.role_id;
+      
+          if (item.items) {
+            item.items = item.items.filter((subItem) => {
+              if(subItem.role_id && user?.role) return (user?.role) >= subItem.role_id;
+              return subItem
+            });
+          }
+      
+          return isMainItemVisible || (item.items && item.items.length > 0);
+        });
+      }, [user]);
 
     return (
         <Sidebar collapsible="icon" {...props}>

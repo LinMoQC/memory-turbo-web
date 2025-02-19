@@ -8,10 +8,10 @@ import Link from "next/link";
 import SubmitButton from "@/components/submit-button";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import { getMailCode, registerAction } from "@/lib/action"; // 发送验证码的 action
 import { Button } from "@/components/ui/button";
 import { debounce } from "lodash-es";
 import confetti from 'canvas-confetti'
+import { getMailCode, registerAction } from "@/actions/auth.action";
 
 export function RegisterForm({
   className,

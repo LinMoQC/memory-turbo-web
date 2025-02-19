@@ -7,11 +7,11 @@ import { useLowCodeConfigStore } from "@/stores/lowcode-config-store";
 import '@cusmoedge/lowcode-editor/index.css';
 import dynamic from "next/dynamic";
 import { useSearchParams } from "next/navigation";
-import { getLowCodeById } from "@/lib/action";
 import { cloneDeep, isEqual } from "lodash-es";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import EditorSkeleton from "../_components/EditorSkeleton";
+import { getLowCodeById } from "@/actions/lowcode.action";
 
 const LowCodeEditor = dynamic(() => import("@cusmoedge/lowcode-editor").then(mod => mod.default), { ssr: false });
 const LowCodeStoreProvider = dynamic(() => import("@cusmoedge/lowcode-editor").then(mod => mod.LowCodeStoreProvider), { ssr: false });

@@ -9,8 +9,8 @@ import LocalStorageUtil from "@/lib/localStorageUtil"
 import { useRouter } from "next/navigation"
 import SubmitButton from "../../../../components/submit-button"
 import toast from "react-hot-toast"
-import { githubLogin, loginAction } from "@/lib/action"
 import { Button } from "@/components/ui/button"
+import { githubLogin, loginAction } from "@/actions/auth.action"
 
 export function LoginForm({
     className,

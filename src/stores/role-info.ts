@@ -1,10 +1,5 @@
 import { create } from 'zustand';
 
-export enum UserRole {
-    public = 1,
-    admin = 2
-}
-
 // 定义用户信息类型
 export interface User {
   id: number;

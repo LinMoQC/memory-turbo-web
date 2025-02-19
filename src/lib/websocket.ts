@@ -1,4 +1,6 @@
 import { io, Socket } from "socket.io-client";
+import LocalStorageUtil from "./localStorageUtil";
+import toast from "react-hot-toast";
 
 type WebSocketClientOptions = {
   maxReconnectTimes?: number; // 最大重连次数
@@ -33,6 +35,10 @@ class WebSocketClient {
     this.heartbeatData = options.heartbeatData || "ping";
   }
 
+   private getToken() {
+    return LocalStorageUtil.getItem("accessToken");  
+  }
+
   // 初始化连接
   connect() {
     if (this.socket) {
@@ -40,10 +46,15 @@ class WebSocketClient {
       return;
     }
 
+    const token = this.getToken();
+
     this.socket = io(this.url, {
       autoConnect: false, // 不自动连接
       reconnection: false, // 手动管理重连
-      withCredentials: true, 
+      withCredentials: true,
+      auth: {
+        accessToken: token, 
+      }, 
     });
 
     this.socket.on("connect", () => {
@@ -63,7 +74,7 @@ class WebSocketClient {
     });
 
     this.socket.on("connect_error", (err) => {
-      console.error("WebSocket connection error:", err);
+      toast.error(err.message)
       if (this.onErrorCallback) this.onErrorCallback(err);
     });
 
