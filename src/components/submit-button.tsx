@@ -1,11 +1,12 @@
 'use client'
 
 import { Button } from '@/components/ui/button';
+import { LoaderCircle } from 'lucide-react';
 import { PropsWithChildren } from 'react';
 import { useFormStatus } from 'react-dom';
 
 interface SubmitButtonProps extends PropsWithChildren {
-  className?: string; // Change CSSProperties to string
+  className?: string; 
 }
 
 const SubmitButton = ({ children, className }: SubmitButtonProps) => {
@@ -16,7 +17,7 @@ const SubmitButton = ({ children, className }: SubmitButtonProps) => {
       aria-disabled={pending}
       className={`w-full ${className}`} 
     >
-      {pending ? 'Submitting...' : children}
+      {pending ? <LoaderCircle className="animate-spin" size={16} strokeWidth={2} aria-hidden="true" /> : children}
     </Button>
   );
 }

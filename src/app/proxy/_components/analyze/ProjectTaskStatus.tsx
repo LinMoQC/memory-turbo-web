@@ -17,6 +17,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
+import React from "react"
 const chartData = [
   { month: "January", desktop: 186, mobile: 80 },
   { month: "February", desktop: 305, mobile: 200 },
@@ -37,7 +38,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export default function ProjectTaskStatus() {
+export const ProjectTaskStatus = React.memo(() => {
   return (
     <Card className="flex-1">
       <CardHeader>
@@ -73,5 +74,5 @@ export default function ProjectTaskStatus() {
         </div>
       </CardFooter>
     </Card>
-  )
-}
+  );
+});

@@ -1,4 +1,6 @@
 import { Metadata } from "next"
+import {ProjectTaskStatus} from "../_components/analyze/ProjectTaskStatus"
+import {UserBehavior} from "../_components/analyze/UserBehavior"
 
 export const metadata: Metadata = {
     title: 'Memory Flow - 仪表盘',
@@ -13,8 +15,12 @@ export default function DashboardPage() {
                 <div className="aspect-video rounded-xl bg-white shadow-sm border-2 dark:bg-dark" />
             </div>
             <div className="h-[100vh] flex flex-col lg:flex-row gap-3 flex-1 rounded-xl md:min-h-min">
-                {/* <ProjectTaskStatus />
-                <UserBehavior /> */}
+                <div className="flex-1">
+                    <ProjectTaskStatus />
+                </div>
+                <div className="flex-1">
+                    <UserBehavior />
+                </div>
             </div>
         </div>
     )

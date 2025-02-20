@@ -108,10 +108,10 @@ export default function UserList() {
             ),
         },
         {
-            accessorKey: "role_id",
+            accessorKey: "role",
             header: "权限",
             cell: ({ row }) => {
-                const roleId = row.getValue("role_id") as Roles;
+                const roleId = row.getValue("role") as Roles;
                 return <div className={`max-w-max rounded-xl`}>
                     <Badge  {...RolesRender[roleId]} />
                 </div>
@@ -215,9 +215,9 @@ export default function UserList() {
                 <div className="flex gap-2 flex-1">
                     {(!isLoading) ? <Input
                         placeholder="按角色搜索..."
-                        value={(table.getColumn("role_id")?.getFilterValue() as string) ?? ""}
+                        value={(table.getColumn("role")?.getFilterValue() as string) ?? ""}
                         onChange={(event) =>
-                            table.getColumn("role_id")?.setFilterValue(event.target.value)
+                            table.getColumn("role")?.setFilterValue(event.target.value)
                         }
                         className="max-w-sm"
                     /> : <div className="w-full animate-pulse flex flex-col space-y-4">
