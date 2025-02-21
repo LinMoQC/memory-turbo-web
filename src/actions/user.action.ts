@@ -16,7 +16,7 @@ export async function updateUserByName(
             email: formData.get('email'),
             avatar: formData.get('avatar'),
             status: Number(formData.get('status')),
-            role_id: Number(formData.get('role_id'))
+            role: Number(formData.get('role'))
         });
 
         return {

@@ -34,7 +34,7 @@ const SubmitDialog: React.FC<SubmitDialogProps> = (props: SubmitDialogProps) => 
   });
 
   const [curStatus, setCurStatus] = useState<UserStatusEnum>(user.status);
-  const [curRole, setCurRole] = useState<Roles>(user.role_id);
+  const [curRole, setCurRole] = useState<Roles>(user.role);
   
   const [isPending, startTransition] = useTransition();
 
@@ -44,7 +44,7 @@ const SubmitDialog: React.FC<SubmitDialogProps> = (props: SubmitDialogProps) => 
     formData.username !== user.username ||
     formData.email !== user.email ||
     curStatus !== user.status ||
-    curRole !== user.role_id;
+    curRole !== user.role;
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -61,7 +61,7 @@ const SubmitDialog: React.FC<SubmitDialogProps> = (props: SubmitDialogProps) => 
     submitData.append("avatar", formData.avatar as string);
     submitData.append("username", formData.username);
     submitData.append("email", formData.email);
-    submitData.append("role_id", curRole.toString());
+    submitData.append("role", curRole.toString());
     submitData.append("status", curStatus.toString());
 
     startTransition(async () => {
@@ -82,7 +82,7 @@ const SubmitDialog: React.FC<SubmitDialogProps> = (props: SubmitDialogProps) => 
       email: user.email
     });
     setCurStatus(user.status);
-    setCurRole(user.role_id);
+    setCurRole(user.role);
   }, [user, isOpen]);
 
   return (
